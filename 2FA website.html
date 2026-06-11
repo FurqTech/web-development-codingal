@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    #sec1 {
+        position: fixed;
+        top: 50px;
+        z-index: 3;
+    }
+
+    #sec2 {
+        opacity: 0;
+        position: fixed;
+        top: 50px
+    }
+
+    button {
+        font-size: 30px;
+        background-color: rgb(0, 247, 255);
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        opacity: 1.0;
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    img {
+        border-radius: 40px;
+        opacity: 1.0;
+    }
+
+    a {
+        color: aqua;
+        font-size: 30px;
+    }
+
+    article {
+        background-color: rgb(198, 255, 252)
+    }
+
+    h2 {
+        background-color: aqua;
+        color: white;
+        border-radius: 5px;
+        font-size: 35px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    nav {
+        position: sticky;
+        top: 10px;
+        left: 0px;
+        background-color: rgb(214, 246, 252);
+        border-radius: 40px;
+        padding: 20px;
+        opacity: 0.85;
+    }
+
+    #sec3 {
+        opacity: 0;
+    }
+</style>
+
+<body d-flex flex-column justify-content-center align-items-center p-3 gap-3>
+    <div id="sec1" class="d-flex flex-column justify-content-center align-items-center p-3 gap-3">
+        <h1 class="text-center" id="h1">Before you start with the dashboard, please register / create an account of
+            yourself.</h1>
+        <textarea name="E-Mail" id="E-Mail"></textarea>
+        <button id="SE" type="button" class="btn btn-primary" onmouseleave="change2()" onmouseover="change()"
+            onclick="se()">Submit Username</button>
+        <textarea name="Password" id="Password"></textarea>
+        <button id="SP" type="button" class="btn btn-primary" onmouseleave="change4()" onmouseover="change3()"
+            onclick="sp()">Submit Password</button>
+        <button id="REG" type="button" class="btn btn-success" onmouseleave="change6()" onmouseover="change5()"
+            onclick="reg()">Register and continue</button>
+    </div>
+    <div id="sec2" class="d-flex flex-column justify-content-center align-items-center p-3 gap-3 text-center">
+        <h1 class="bg-primary rounded-3 " id="p"></h1>
+        <h4 id="p2"></h4>
+        <h1 class="bg-primary rounded-3 " id="p3"></h1>
+        <h4 id="p4"></h4>
+        <h1 class="bg-primary rounded-3 " id="p5"></h1>
+        <h4 id="p6"></h4>
+        <h4>Are you sure you want to Continue with this username and password?
+        </h4>
+        <button id="done" type="button" class="btn btn-info" onmouseleave="change8()" onmouseover="change7()"
+            onclick="AD()">OK</button>
+        <button id="Reaccount" type="button" class="btn btn-info" onmouseleave="change10()" onmouseover="change9()"
+            onclick="CreateA()">Create Account Again(change username/password)</button>
+    </div>
+    <div id="sec3">
+        <nav><img height="150" width="150" src="Cadefun logo.jpeg" alt="   ">
+            <a href="https://www.codingal.com/en-pk/courses/"><button>Courses</button> </a>
+            <a href="https://www.codingal.com/en-pk/competitions/"><button>Competitions</button></a>
+            <a href="http://127.0.0.1:5500/Start%20quiz%20screen.html"><button>Quizzes</button></a>
+            <a href="http://127.0.0.1:5500/2FA%20website.html"><Button>Dashboard</Button></a>
+            <a href="https://www.codingal.com/en-pk/student/dashboard/modules/"><Button>My Lessons</Button></a>
+            <a href="http://127.0.0.1:5500/Projects.html"><button>My projects</button></a>
+            <a href="https://www.codingal.com/en-pk/student/dashboard/certificates/"><button>My
+                    Certificates</button></a>
+            <a href="https://www.codingal.com/en-pk/student/dashboard/progress-reports/"><button>My Progress
+                    Reports</button></a>
+            <a href="https://www.codingal.com/en-pk/student/dashboard/my-payments/"><button>My Payments</button></a>
+            <a href="https://www.codingal.com/en-pk/student/dashboard/leaderboard/"><button>Leaderboard</button></a>
+            <a href="http://127.0.0.1:5500/Referral.html"><button>Invite
+                    Friends</button></a>
+            <button onclick="logout()">logout</button>
+        </nav>
+        <p><b>Notice:</b> We take some help from codingal for some actions.</p>
+        <img height="400" width="1400" src="Scenery.jpg" alt="">
+        <main class="d-flex flex-row justify-content-start align-items-start gap-3 p-3"><img height="150" width="150"
+                src="User.jfif" alt="" onmouseover="namee()" onmouseleave="nam()">
+            <p id="name"></p>
+            <a href="http://127.0.0.1:5500/My-info.html">View profile</a>
+        </main>
+        <a href="https://www.codingal.com/en-pk/batches/f1cf397f-726e-4b81-930b-ba759fdba34d/classroom/"><button
+                onmouseover="join1()" onmouseleave="join2()" id="class">Join
+                class</button></a>
+        <h2>Classroom leaderboard:</h2>
+        <Article>
+            <p>1#</p><img height="50" width="50" src="Anioluwa.jpeg" alt=""><a
+                href="http://127.0.0.1:5500/Anioluwa-info.html">Anioluwa Aromokeye</a>
+            <p>Grade7</p>
+        </Article>
+        <Article>
+            <p>2#</p><img height="50" width="50" src="Than.jpg" alt=""><a
+                href="http://127.0.0.1:5500/Than-info.html">Than Vereakseth</a>
+            <p>Grade7</p>
+        </Article>
+        <Article>
+            <p>3#</p><img height="50" width="50" src="Elina.jpg" alt=""><a
+                href="http://127.0.0.1:5500/Elina-info.html">Elina</a>
+            <p>Grade7</p>
+        </Article>
+        <Article>
+            <p>4#</p><img height="50" width="50" src="Bhavia.jpg" alt=""><a
+                href="http://127.0.0.1:5500/Bhavia-info.html">Bhavia Ankarwala</a>
+            <p>Grade7</p>
+        </Article>
+        <Article>
+            <p>5#</p><img height="50" width="50" src="Naomi.png" alt=""><a
+                href="http://127.0.0.1:5500/Naomi-info.html">Naomi</a>
+            <p>Grade6</p>
+        </Article>
+        <Article>
+            <p>523#</p><img height="50" width="50" src="Me.jpg" alt=""><a
+                href="http://127.0.0.1:5500/My-info.html">Muhammad Furqan</a>
+            <p>Grade6</p>
+        </Article>
+        <h1>We are always here for help.</h1>
+        <article>
+            <ul>
+                <li><img height="40" width="40" src="My codingal teacher.jpg" alt=""></li>
+                <li>
+                    <p>Farooz Mishwaat Omlan</p>
+                </li>
+            </ul>
+        </article>
+
+        <a href="https://api.whatsapp.com/send/?phone=%2B8801774878252&text&type=phone_number&app_absent=0">Contact your
+            expert
+            teacher(s)</a>
+        <p>or.....</p>
+        <Article><img height="200" width="200" src="Cadefun logo.jpeg" alt=""></Article>
+        <a href="https://api.whatsapp.com/send/?phone=15103619534&text&type=phone_number&app_absent=0">Ask codefun
+            through
+            whatsapp chat
+        </a>
+        <article><img height="300" width="500" src="student-referral.png" alt=""></article>
+        <p>Invite your friends to codefun!!!</p>
+        <a
+            href="https://codingal.typeform.com/to/W9tpl6Jd?utm_source=frontend_app&phone=%2B923135443665&student_email=nasirwaqas86%40gmail.com&student"><button>Submit
+                referral</button></a>
+        <p>or...</p>
+        <p>Go to link of:</p>
+        <ul>
+            <li><a href="https://www.codingal.com/s/h0sy6R/">https://www.codingal.com/s/h0sy6R/</a></li>
+            <li>
+                <p>or...</p>
+            </li>
+            <li><a
+                    href="https://web.whatsapp.com/send?text=%F0%9F%9A%80%20Your%20buddy%20MUHAMMAD%20FURQAN%2C%20has%20invited%20you%20to%20join%20Codingal%20to%20start%20learning%20how%20to%20code.%20Build%20awesome%20apps%2C%20games%2C%20and%20websites%20together%20%F0%9F%8E%AE%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB.%20Sign%20up%20now!%20-%20https%3A%2F%2Fwww.codingal.com%2Fs%2Fh0sy6R%2F">Invite
+                    via whatsapp</a></li>
+        </ul>
+
+    </div>
+
+    <script>
+        var email = " "
+        var password = ""
+        function se() {
+            email = document.getElementById("E-Mail").value
+        }
+        function sp() {
+            password = document.getElementById("Password").value
+        }
+        function reg() {
+            document.getElementById("sec1").style.opacity = "0"
+            document.getElementById("sec2").style.opacity = "1"
+            document.getElementById("p").textContent = ("Welcome " + email)
+            document.getElementById("p2").textContent = "Let's give you a sneak peek of your account name and password because if you forget it, We can't help you with that."
+            document.getElementById("p3").textContent = "Username:- "
+            document.getElementById("p4").textContent = email
+            document.getElementById("p5").textContent = "Password"
+            document.getElementById("p6").textContent = password
+            document.getElementById("sec1").style.zIndex = 0
+            document.getElementById("sec2").style.zIndex = 3
+        }
+        function change() {
+            document.getElementById("SE").style.backgroundColor = "green"
+            document.getElementById("SE").style.color = "white"
+        }
+        function change2() {
+            document.getElementById("SE").style.backgroundColor = "lightblue"
+            document.getElementById("SE").style.color = "black"
+        }
+        function change3() {
+            document.getElementById("SP").style.backgroundColor = "green"
+            document.getElementById("SP").style.color = "white"
+        }
+        function change4() {
+            document.getElementById("SP").style.backgroundColor = "lightblue"
+            document.getElementById("SP").style.color = "black"
+        }
+        function change5() {
+            document.getElementById("REG").style.backgroundColor = "yellow"
+            document.getElementById("REG").style.color = "black"
+        }
+        function change6() {
+            document.getElementById("REG").style.backgroundColor = "green"
+            document.getElementById("REG").style.color = "White"
+        }
+        function change7() {
+            document.getElementById("done").style.backgroundColor = "green"
+            document.getElementById("done").style.color = "white"
+        }
+        function change8() {
+            document.getElementById("done").style.backgroundColor = "lightblue"
+            document.getElementById("done").style.color = "black"
+        }
+        function AD() {
+            document.getElementById("sec2").style.opacity = 0
+            document.getElementById("sec3").style.opacity = 1
+            document.getElementById("sec3").style.top = "50px"
+            document.getElementById("sec2").style.zIndex = 0
+            document.getElementById("sec3").style.zIndex = 100
+            document.getElementById("sec2").style.top = 0
+        }
+        function namee() {
+            document.getElementById("name").textContent = email
+        }
+        function nam() {
+            document.getElementById("name").textContent = " "
+        }
+        function change9() {
+            document.getElementById("Reaccount").style.backgroundColor = "green"
+            document.getElementById("Reaccount").style.color = "white"
+        }
+        function change10() {
+            document.getElementById("Reaccount").style.backgroundColor = "lightblue"
+            document.getElementById("Reaccount").style.color = "black"
+        }
+        function CreateA() {
+            document.getElementById("sec2").style.opacity = 0
+            document.getElementById("sec2").style.zIndex = 0
+            document.getElementById("sec1").style.opacity = 1
+            document.getElementById("sec1").style.zIndex = 3
+        }
+        function logout() {
+            email = " "
+            password = " "
+            document.getElementById("sec1").style.opacity = 1
+            document.getElementById("sec2").style.opacity = 0
+            document.getElementById("sec3").style.opacity = 0
+            document.getElementById("sec1").style.zIndex = 3
+            document.getElementById("sec2").style.zIndex = 0
+            document.getElementById("sec3").style.zIndex = 0
+            document.getElementById("E-Mail").value = " "
+            document.getElementById("Password").value = " "
+        }
+        function join1() {
+            document.getElementById("class").style.color = "aqua"
+            document.getElementById("class").style.backgroundColor = "white"
+        }
+        function join2() {
+            document.getElementById("class").style.color = "white"
+            document.getElementById("class").style.backgroundColor = "aqua"
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

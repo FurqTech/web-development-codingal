@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    #keypad2 {
+        opacity: 0;
+    }
+</style>
+
+<body>
+    <h1 class="text-center">Google Calculator</h1>
+    <div>
+        <p class="fs-3" id="p1"></p>
+        <p class="fs-3" id="p2"></p>
+        <p class="fs-3" id="p3"></p>
+    </div>
+    <p class="fs-1 text-center bg-secondary" id="p4"></p>
+    <div id="keypad1">
+        <button type="button" class="btn btn-success p-3" onclick="print1()">1</button>
+        <button type="button" class="btn btn-success p-3" onclick="print2()">2</button>
+        <button type="button" class="btn btn-success p-3" onclick="print3()">3</button>
+        <button type="button" class="btn btn-success p-3" onclick="print_add()">+</button>
+        <button type="button" class="btn btn-success p-3" onclick="print4()">4</button>
+        <button type="button" class="btn btn-success p-3" onclick="print5()">5</button>
+        <button type="button" class="btn btn-success p-3" onclick="print6()">6</button>
+        <button type="button" class="btn btn-success p-3" onclick="print_subtract()">-</button>
+        <button type="button" class="btn btn-success p-3" onclick="print7()">7</button>
+        <button type="button" class="btn btn-success p-3" onclick="print8()">8</button>
+        <button type="button" class="btn btn-success p-3" onclick="print9()">9</button>
+        <button type="button" class="btn btn-success p-3" onclick="print_divide()">/</button>
+        <button type="button" class="btn btn-danger p-3" onclick="print_clear()">Clear</button>
+        <button type="button" class="btn btn-success p-3" onclick="print0()">0</button>
+        <button type="button" class="btn btn-success p-3" onclick="print_multiply()">*</button>
+    </div>
+    <div id="keypad2">
+        <button type="button" class="btn btn-success p-3" onclick="print11()">1</button>
+        <button type="button" class="btn btn-success p-3" onclick="print22()">2</button>
+        <button type="button" class="btn btn-success p-3" onclick="print33()">3</button>
+        <button type="button" class="btn btn-success p-3" onclick="print_add2()">+</button>
+        <button type="button" class="btn btn-success p-3" onclick="print44()">4</button>
+        <button type="button" class="btn btn-success p-3" onclick="print55()">5</button>
+        <button type="button" class="btn btn-success p-3" onclick="print66()">6</button>
+        <button type="button" class="btn btn-success p-3" onclick="print_subtract2()">-</button>
+        <button type="button" class="btn btn-success p-3" onclick="print77()">7</button>
+        <button type="button" class="btn btn-success p-3" onclick="print88()">8</button>
+        <button type="button" class="btn btn-success p-3" onclick="print99()">9</button>
+        <button type="button" class="btn btn-success p-3" onclick="print_divide2()">/</button>
+        <button type="button" class="btn btn-danger p-3" onclick="print_clear2()">Clear</button>
+        <button type="button" class="btn btn-success p-3" onclick="print00()">0</button>
+        <button type="button" class="btn btn-success p-3" onclick="print_multiply2()">*</button>
+    </div>
+    <p class="fs-1 text-center bg-secondary" id="p4"></p>
+
+
+    <script>
+        var a1 = 0
+        var oper = 0
+        var a2 = 0
+        function print1() {
+            a1 = (1)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print2() {
+            a1 = (2)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print3() {
+            a1 = (3)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print4() {
+            a1 = (4)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print5() {
+            a1 = (5)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print6() {
+            a1 = (6)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print7() {
+            a1 = (7)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print8() {
+            a1 = (8)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print9() {
+            a1 = (9)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print0() {
+            a1 = (0)
+            document.getElementById("p1").textContent = a1
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print_add() {
+            oper = ("+")
+            document.getElementById("p2").textContent = oper
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print_subtract() {
+            oper = ("-")
+            document.getElementById("p2").textContent = oper
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print_multiply() {
+            oper = ("*")
+            document.getElementById("p2").textContent = oper
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print_divide() {
+            oper = ("/")
+            document.getElementById("p2").textContent = oper
+            document.getElementById("keypad1").style.opacity = "0"
+            document.getElementById("keypad2").style.opacity = "1"
+        }
+        function print_clear() {
+            document.getElementById("p1").textContent = " "
+            document.getElementById("p2").textContent = " "
+            document.getElementById("p3").textContent = " "
+            document.getElementById("p3").textContent = " "
+        }
+        function print11() {
+            a2 = (1)
+            document.getElementById("p3").textContent = a2
+
+        }
+        function print22() {
+            a2 = (2)
+            document.getElementById("p3").textContent = a2
+        }
+        function print33() {
+            a2 = (3)
+            document.getElementById("p3").textContent = a2
+        }
+        function print44() {
+            a2 = (4)
+            document.getElementById("p3").textContent = a2
+        }
+        function print55() {
+            a2 = (5)
+            document.getElementById("p3").textContent = a2
+        }
+        function print66() {
+            a2 = (6)
+            document.getElementById("p3").textContent = a2
+        }
+        function print77() {
+            a2 = (7)
+            document.getElementById("p3").textContent = a2
+        }
+        function print88() {
+            a2 = (8)
+            document.getElementById("p3").textContent = a2
+        }
+        function print99() {
+            a2 = (9)
+            document.getElementById("p3").textContent = a2
+        }
+        function print00() {
+            a2 = (0)
+            document.getElementById("p3").textContent = a2
+        }
+        function print_add2() {
+            oper = ("+")
+            document.getElementById("p2").textContent = oper
+            document.getElementById("p4").textContent = (a1 + a2)
+        }
+        function print_subtract2() {
+            oper = ("-")
+            document.getElementById("p2").textContent = oper
+            document.getElementById("p4").textContent = (a1 - a2)
+        }
+        function print_multiply2() {
+            oper = ("*")
+            document.getElementById("p2").textContent = oper
+            document.getElementById("p4").textContent = (a1 * a2)
+        }
+        function print_divide2() {
+            oper = ("/")
+            document.getElementById("p2").textContent = oper
+            document.getElementById("p4").textContent = (a1 / a2)
+        }
+        function print_clear2() {
+            document.getElementById("p1").textContent = " "
+            document.getElementById("p2").textContent = " "
+            document.getElementById("p3").textContent = " "
+            document.getElementById("p4").textContent = " "
+            document.getElementById("keypad1").style.opacity = "1"
+            document.getElementById("keypad2").style.opacity = "0"
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
